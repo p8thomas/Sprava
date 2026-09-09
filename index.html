@@ -3,21 +3,124 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sprava</title>
+    <meta name="color-scheme" content="light">
+    <title>Sprava x Refero</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <main class="shell">
-      <section class="panel" aria-labelledby="title">
-        <p class="eyebrow">Sprava is alive</p>
-        <h1 id="title">Your repo now runs.</h1>
-        <p class="copy">
-          This is a clean starter page served straight from the Sprava folder.
-          No build step, no package install, just something real on the screen.
+    <main class="page">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Refero design plugin</p>
+          <h1>Research-backed UI direction for Sprava.</h1>
+        </div>
+        <p class="hero-copy">
+          This page shows what the Refero workflow adds: reference-led taste,
+          concrete product patterns, journey logic, and a quality gate that
+          pushes the interface away from generic generated design.
         </p>
-        <div class="actions">
-          <button id="ping" type="button">Run check</button>
-          <span id="result" role="status">Ready.</span>
+      </header>
+
+      <section class="workspace" aria-label="Refero capabilities demo">
+        <nav class="rail" aria-label="Capability tabs">
+          <button class="tab is-active" type="button" data-panel="styles">Styles</button>
+          <button class="tab" type="button" data-panel="screens">Screens</button>
+          <button class="tab" type="button" data-panel="flows">Flows</button>
+          <button class="tab" type="button" data-panel="lock">Lock</button>
+        </nav>
+
+        <article class="stage" id="styles" data-panel-content>
+          <div class="stage-head">
+            <p class="kicker">Visual research</p>
+            <h2>Find the taste before designing the surface.</h2>
+          </div>
+          <div class="reference-grid">
+            <div class="reference is-primary">
+              <span>Primary direction</span>
+              <strong>Dense learning software, light canvas, precise modules.</strong>
+              <p>Owns the canvas, type density, borders, and product-first rhythm.</p>
+            </div>
+            <div class="reference">
+              <span>Borrowed detail</span>
+              <strong>Sharp accent used only for action and state.</strong>
+              <p>Prevents the whole interface from becoming one brand-color wash.</p>
+            </div>
+            <div class="reference">
+              <span>Rejected default</span>
+              <strong>No huge hero-card stack, no violet SaaS gloss.</strong>
+              <p>The design must feel like a study tool, not a generated landing page.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="stage is-hidden" id="screens" data-panel-content>
+          <div class="stage-head">
+            <p class="kicker">Screen patterns</p>
+            <h2>Turn real product screens into concrete UI decisions.</h2>
+          </div>
+          <div class="screen-board">
+            <div class="lesson-map">
+              <div class="map-row">
+                <span>Biology</span>
+                <button type="button">Notes</button>
+                <button type="button">Questions</button>
+                <button type="button">Past papers</button>
+              </div>
+              <div class="map-row">
+                <span>Chemistry</span>
+                <button type="button">Formulae</button>
+                <button type="button">Weak topics</button>
+                <button type="button">Practice</button>
+              </div>
+              <div class="map-row">
+                <span>Maths</span>
+                <button type="button">Methods</button>
+                <button type="button">Marks</button>
+                <button type="button">Exam sets</button>
+              </div>
+            </div>
+            <aside class="screen-notes">
+              <p><strong>Adapts:</strong> resource access in one scan, not buried pages.</p>
+              <p><strong>Component rule:</strong> buttons are actions; rows are navigation paths.</p>
+            </aside>
+          </div>
+        </article>
+
+        <article class="stage is-hidden" id="flows" data-panel-content>
+          <div class="stage-head">
+            <p class="kicker">Journey logic</p>
+            <h2>Design the steps, not just the screen.</h2>
+          </div>
+          <ol class="flow">
+            <li><span>1</span><p>Student chooses subject and exam board.</p></li>
+            <li><span>2</span><p>Sprava surfaces notes, questions, papers, and formula sheets together.</p></li>
+            <li><span>3</span><p>Weak-topic signals decide the next recommended action.</p></li>
+            <li><span>4</span><p>Completion updates the map, progress, and next practice set.</p></li>
+          </ol>
+        </article>
+
+        <article class="stage is-hidden" id="lock" data-panel-content>
+          <div class="stage-head">
+            <p class="kicker">Reference lock</p>
+            <h2>Make decisions traceable before code changes.</h2>
+          </div>
+          <div class="ledger">
+            <div><span>Canvas</span><p>Light, quiet, dense. No dark-mode default.</p></div>
+            <div><span>Type</span><p>Single neutral sans; weight and scale create hierarchy.</p></div>
+            <div><span>Accent</span><p>Green only marks state and readiness. Amber only for primary action.</p></div>
+            <div><span>Reject</span><p>No generic card grid, no decorative stripes, no fake screenshots.</p></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="quality">
+        <p class="kicker">Quality gate</p>
+        <div class="checks">
+          <span>Reference-led</span>
+          <span>No violet default</span>
+          <span>Cards justified</span>
+          <span>Token roles preserved</span>
+          <span>Dense enough to use</span>
         </div>
       </section>
     </main>

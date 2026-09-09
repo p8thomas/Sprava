@@ -1,12 +1,13 @@
-const button = document.querySelector("#ping");
-const result = document.querySelector("#result");
+const tabs = document.querySelectorAll("[data-panel]");
+const panels = document.querySelectorAll("[data-panel-content]");
 
-button.addEventListener("click", () => {
-  const time = new Date().toLocaleTimeString([], {
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const target = tab.dataset.panel;
+
+    tabs.forEach((item) => item.classList.toggle("is-active", item === tab));
+    panels.forEach((panel) => {
+      panel.classList.toggle("is-hidden", panel.id !== target);
+    });
   });
-
-  result.textContent = `Working at ${time}.`;
 });
