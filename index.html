@@ -58,32 +58,50 @@
             <p class="kicker">Screen patterns</p>
             <h2>Turn real product screens into concrete UI decisions.</h2>
           </div>
+          <p id="prototype-help" class="prototype-help">Interactive prototype · No study materials or examination papers are included. Board choices demonstrate selection only, not syllabus coverage.</p>
+          <div class="study-filters" aria-describedby="prototype-help">
+            <div class="study-field"><label for="study-subject">Subject</label>
+              <select id="study-subject"><option value="">Choose a subject</option><option>Biology</option><option>Chemistry</option><option>Maths</option></select>
+            </div>
+            <div class="study-field"><label for="study-board">Exam board</label>
+              <select id="study-board" disabled><option value="">Choose a subject first</option></select>
+            </div>
+          </div>
+          <p id="selection-status" role="status" aria-live="polite">Choose a subject, then an exam board to explore resources.</p>
           <div class="screen-board">
             <div class="lesson-map">
-              <div class="map-row">
+              <div class="map-row" data-subject="Biology">
                 <span>Biology</span>
-                <button type="button">Notes</button>
-                <button type="button">Questions</button>
-                <button type="button">Past papers</button>
+                <button type="button" data-resource disabled aria-controls="resource-preview" aria-pressed="false">Notes</button>
+                <button type="button" data-resource disabled aria-controls="resource-preview" aria-pressed="false">Questions</button>
+                <button type="button" data-resource disabled aria-controls="resource-preview" aria-pressed="false">Past papers</button>
               </div>
-              <div class="map-row">
+              <div class="map-row" data-subject="Chemistry">
                 <span>Chemistry</span>
-                <button type="button">Formulae</button>
-                <button type="button">Weak topics</button>
-                <button type="button">Practice</button>
+                <button type="button" data-resource disabled aria-controls="resource-preview" aria-pressed="false">Formulae</button>
+                <button type="button" data-resource disabled aria-controls="resource-preview" aria-pressed="false">Weak topics</button>
+                <button type="button" data-resource disabled aria-controls="resource-preview" aria-pressed="false">Practice</button>
               </div>
-              <div class="map-row">
+              <div class="map-row" data-subject="Maths">
                 <span>Maths</span>
-                <button type="button">Methods</button>
-                <button type="button">Marks</button>
-                <button type="button">Exam sets</button>
+                <button type="button" data-resource disabled aria-controls="resource-preview" aria-pressed="false">Methods</button>
+                <button type="button" data-resource disabled aria-controls="resource-preview" aria-pressed="false">Marks</button>
+                <button type="button" data-resource disabled aria-controls="resource-preview" aria-pressed="false">Exam sets</button>
               </div>
             </div>
             <aside class="screen-notes">
               <p><strong>Adapts:</strong> resource access in one scan, not buried pages.</p>
-              <p><strong>Component rule:</strong> buttons are actions; rows are navigation paths.</p>
+              <p><strong>Try it:</strong> select a subject and board, then open a resource below.</p>
+              <p><strong>Progress:</strong> tracking and recommendations are not connected in this prototype.</p>
             </aside>
           </div>
+          <section id="resource-preview" class="resource-preview" aria-labelledby="resource-title" tabindex="-1">
+            <p class="kicker">Resource preview</p>
+            <h3 id="resource-title">Choose your study resources</h3>
+            <p id="resource-context">No subject or exam board selected.</p>
+            <p id="resource-message">Select a subject and exam board above to enable its resource buttons.</p>
+          </section>
+          <noscript><p>This interactive prototype needs JavaScript. Enable it to select subjects, exam boards and resources.</p></noscript>
         </article>
 
         <article class="stage is-hidden" id="flows" data-panel-content>
