@@ -324,3 +324,45 @@ h2 {
     font-size: clamp(3rem, 18vw, 5rem);
   }
 }
+
+/* Extend the existing reference lock: flat surfaces, green selection state. */
+.study-filters {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.study-field { display: grid; gap: 8px; }
+.study-filters label { font-weight: 750; }
+.study-filters select {
+  width: 100%; min-width: 0; min-height: 44px; padding: 8px;
+  font: inherit; color: var(--ink); background: var(--panel);
+  border: 1px solid var(--muted); border-radius: 6px;
+}
+.prototype-help, #selection-status, .resource-preview p { color: var(--muted); line-height: 1.5; }
+.prototype-help { margin: 0 0 20px; }
+#selection-status { min-height: 3em; }
+#screens .screen-board { grid-template-columns: minmax(0, 1fr); }
+#screens .map-row { grid-template-columns: 110px repeat(3, minmax(0, 1fr)); }
+.map-row button { padding: 8px; min-height: 44px; overflow-wrap: anywhere; }
+.map-row.is-selected > span { color: var(--green); }
+.map-row button[aria-pressed="true"] { border-color: var(--green); background: var(--soft-green); }
+.map-row button:disabled { cursor: not-allowed; color: var(--muted); background: var(--paper); }
+#screens .screen-notes { border-left: 0; border-top: 1px solid var(--line); padding: 16px 0 0; gap: 10px; }
+.resource-preview { margin-top: 24px; padding: 20px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); }
+.resource-preview h3 { margin: 0; font-size: 1.25rem; }
+.resource-preview p:last-child { margin-bottom: 0; }
+button, select { touch-action: manipulation; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+[hidden] { display: none !important; }
+@media (max-width: 600px) {
+  .study-filters { grid-template-columns: 1fr; }
+  #screens .map-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  #screens .map-row > span { grid-column: 1 / -1; }
+}
+/* Keep the showcase's large type inside narrow viewports and zoomed layouts. */
+h1, h2, .reference strong { overflow-wrap: anywhere; }
+.stage, .hero > div { min-width: 0; }
+@media (max-width: 600px) {
+  h1 { font-size: clamp(2.25rem, 12vw, 3rem); }
+  #screens .map-row { grid-template-columns: 1fr; }
+}
